@@ -1,6 +1,4 @@
 function fibs(number) {
-    let first = 0;
-    let second = 1;
     let array = [];
     for (i = 0; i < number; i++) {
         if (i === 0) {
@@ -12,4 +10,11 @@ function fibs(number) {
         }
     }
     return array;
+}
+
+function fibsRec(number) {
+    if (number === 1) return [0, 1];
+    const fibsArray = fibsRec(number - 1);
+    fibsArray.push(fibsArray[fibsArray.length - 1] + fibsArray[fibsArray.length - 2])
+    return fibsArray;
 }
